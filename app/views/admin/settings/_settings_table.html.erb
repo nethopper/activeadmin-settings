@@ -42,13 +42,13 @@
                       <%= f.input :file, :hint => setting.value %>
                       <%= f.input :remove_file, :as => :boolean %>
                     <% when "text" %>
-                      <%= f.input :string, :as => :text %>
+                      <%= f.input :string, :as => :text, :label => "Text" %>
                     <% when "html" %>
                       <%= f.input :string,
                                   :as => :text,
                                   :input_html => { :class => "settings-redactor" } %>
                     <% else %>
-                      <%= f.input :string, :placeholder => "#{t '.default' }: " + setting.default_value(locale) %>
+                      <%= f.input :string, :as => :string, :placeholder => "#{t '.default' }: " + setting.default_value(locale) %>
                     <% end %>
                   <% end %>
                 <% end %>
